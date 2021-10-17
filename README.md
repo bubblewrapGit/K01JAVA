@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # FirstGitTest
 첫번째 깃헙 테스트
 =======
@@ -37,6 +38,10 @@ JAVA교육백업
 =======
 # K01JAVA
 211017깃연동테스트_두번쨰
+>>>>>>> refs/remotes/origin/main
+=======
+# K01JAVA
+JavaGit
 >>>>>>> refs/remotes/origin/main
 =======
 # K01JAVA
