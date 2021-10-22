@@ -57,7 +57,8 @@ public class HRSelected {
 							emp_id, f_name, l_name, h_date, sal);
 				}
 					/*
-					 5. 자원반납 : 모든 작업을 마친후에는 메모리 절약을 위해 연결했던 
+					 5. 자원반납 : 모든 작업을 마친후에는 메모리 절약을 위해
+					 	연결했던 자원을 반납한다.
 					 */
 					rs.close();
 					stmt.close();
