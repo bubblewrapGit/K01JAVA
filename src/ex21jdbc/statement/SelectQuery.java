@@ -9,8 +9,7 @@ import java.sql.SQLException;
  	- getXXX() 계열의 메서드
  	오라클의 자료형이 
  		number타입 : getInt()
- 		char/varchar2타입 : getString() => 오라클 자료형에 상관없이
- 									모든 타입을 추출할 수 있다.
+ 		char/varchar2타입 : getString() => 오라클 자료형에 상관없이 모든 타입을 추출할 수 있다.
  		date타입 : getDate()
  	- 인자는 select절의 순서대로 인덱스(1부터시작)를 사용하거나 컬럼명을 사용할 수 있다.
  */
