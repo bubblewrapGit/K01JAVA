@@ -3,7 +3,7 @@ package quiz;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
-	
+
 
 
 /*
@@ -26,6 +26,36 @@ import java.util.Scanner;
 
  */
 
+class Restart{
+	public Restart() {
+		System.out.println("재시작 하시겠습니까? 재시작(1) / 종료(0) : ");
+		Scanner scan = new Scanner(System.in);
+		
+				
+		while(true) {
+			try {
+				int userReInput = scan.nextInt();
+				switch(userReInput) {
+				case 1:
+					System.out.println("----재시작합니다----");
+					break;
+				case 0:
+					System.out.println("----종료합니다----");			
+					return;
+				default:
+					System.out.println("재시작(1) / 종료(0) 중에 입력하세요.(1)");
+					scan.nextLine();
+					continue;
+				}	
+			}catch (InputMismatchException e) {
+				System.out.println("재시작(1) / 종료(0) 중에 입력하세요.(2)");
+				scan.nextLine();
+				continue;
+			}
+			break;
+		}
+	}
+}
 
 public class QuUpDownGame {
 	public static void main(String[] args) {
@@ -49,8 +79,8 @@ public class QuUpDownGame {
 							}else if(comNum < userNum){
 								System.out.println("[" + userNum + "] 보다 작습니다. -실패-");				
 							}else {
-								System.out.println("★ 정답입니다 ★");
-								
+								System.out.println("성공!");
+								Restart regame = new Restart();
 								break;
 							}
 						}else {
@@ -67,42 +97,11 @@ public class QuUpDownGame {
 					scan.nextLine();
 					continue;
 				}
-				
-				if(i == 7) {
-					System.out.printf("정답은 [ %d ] 였습니다.", comNum);
-					System.out.println();					
-				}
 			}
-			System.out.println();
-			System.out.println("=========================================");
-			System.out.println("          게임이 종료되었습니다          ");
-			System.out.println("=========================================");
-			
-			
-			System.out.print("재시작 하시겠습니까? 재시작(1) / 종료(0) : ");
-			Scanner scan = new Scanner(System.in);
-			
-			while(true) {
-				try {
-					int userReInput = scan.nextInt();
-					
-					if(userReInput == 1) {
-						System.out.println("----재시작합니다----");
-					}else if(userReInput == 0) {
-						System.out.println("----종료합니다----");
-						return;
-					}else {
-						System.out.println("재시작(1) / 종료(0) 중에 입력하세요.(1)");
-						scan.nextLine();
-						continue;					
-					}
-				}catch (InputMismatchException e) {
-					System.out.println("재시작(1) / 종료(0) 중에 입력하세요.(2)");
-					scan.nextLine();
-					continue;
-				}
-				break;
-			}
+			System.out.println("=====================");
+			System.out.println("게임이 종료되었습니다");
+			System.out.println("=====================");
+			Restart regame = new Restart();
 		}
 	}
 }
