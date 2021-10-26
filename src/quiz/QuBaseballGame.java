@@ -29,6 +29,8 @@ import java.util.Scanner;
 
 import common.Student;
 
+
+
 class RandomComData{
 	@Override
 	public String toString() {
@@ -51,40 +53,30 @@ class RandomComData{
 			}
 			break;
 		}
-		for(int coms : com) {
-			System.out.print(coms + " / ");
-		}
-		System.out.println();
 	}
 }
 
 
+
 public class QuBaseballGame {
+	
 	public static void main(String[] args) {
 		
-		int[] user = new int[3];
-		int playCnt = 0;
-		int maxCnt = 1;
 		
+		RandomComData comRan = new RandomComData();
+		
+		int[] user = new int[3];
 		Scanner scanner = new Scanner(System.in);
-		while(true) {
-			
-			RandomComData comRan = new RandomComData();
-			
-			System.out.println("[ " + maxCnt + " ] 회차입니다.");
-			for(playCnt = 0; playCnt < 3; playCnt++) {
-				
-				System.out.println("1~9까지의 숫자 3개를 입력해주세요(Enter로 구분)");
-				for(int i = 0; i < user.length; i++) {
+		for(int playCnt = 0; playCnt < 10; playCnt++) {
+			System.out.println("1~9까지의 숫자 3개를 입력해주세요");
+			while(true) {
+				for(int i = 0; i < 3; i++) {
 					try {
 						user[i] = scanner.nextInt();
-						
 						if(user[i] > 0 && user[i] < 10) {
-							for(int j = 0; j < i; j++) {
-								if(user[i] == user[j]) {
-									System.out.println("중복값입니다. 다시 입력하세요");
-									i--;
-								}
+							if(user[i] == user[0]) {
+								
+								System.out.println("같은 숫자 안돼요");
 							}
 						}else {
 							i--;
@@ -109,6 +101,7 @@ public class QuBaseballGame {
 				int ballCnt = 0;
 				int outCnt = 0;
 				
+				
 				for(int a = 0; a < 3; a++) {
 					for(int b = 0; b < 3; b++) {
 						if(user[a] == comRan.com[b]) {
@@ -122,12 +115,6 @@ public class QuBaseballGame {
 						}
 					}
 				}
-				
-				if(strikeCnt == 3) {
-					System.out.println("3스트라이크 삼진 아웃!");
-					break;
-				}
-				
 				if(outCnt == 9) {
 					System.out.println("아웃");
 				}else {
@@ -135,27 +122,25 @@ public class QuBaseballGame {
 				}
 			}
 			
-			System.out.println("계속할지(1) / 종료할지(0)");
-			int retry = scanner.nextInt();
-			switch (retry) {
-			case 1:
-				playCnt = 0;
-				maxCnt++;
-				continue;
-			case 0:
-				maxCnt = 0;
-				break;
-			default:
-				System.out.println("계속할지(1) / 종료할지(0)");
-			}
-			break;
+			
+			
+
+			
+
 		}
-		System.out.println("수고링");
+		
+		
+		
+		
+
+		
+		
 	}
 }
 
 class UserErrNum extends Exception{
 	public UserErrNum() {
 		System.out.println("1~9 사이의 숫자 중에 입력해주세요");
+		
 	}
 }
